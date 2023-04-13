@@ -6,21 +6,8 @@ orbs:
 jobs:
   test:
     docker:
-      - image: cimg/node:16.16
+      - image: goodguyankit/circom-node
     steps:
-      - run:
-          name: Install Rust and circom
-          command: |
-            curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
-            source "$HOME/.cargo/env"
-            git clone https://github.com/iden3/circom.git
-            cd circom
-            cargo build --release
-            cargo install --path circom
-            echo "$HOME/.cargo/bin" >> $PATH
-      - run:
-          name: Check Circom
-          command: circom --help
       - checkout
       - node/install-packages:
           pkg-manager: "yarn"

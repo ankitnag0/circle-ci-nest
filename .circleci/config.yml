@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@5
-
 jobs:
   test:
     docker:
@@ -10,14 +7,18 @@ jobs:
     steps:
       - checkout:
           path: my-project
-      - node/install-packages:
-          pkg-manager: "yarn"
+      - run:
+          name: Install dependencies
+          command: |
+            cd my-project
+            yarn install
       - run:
           name: Run tests
-          command: yarn test
+          command: |
+            cd my-project
+            yarn test
 
 workflows:
   test:
     jobs:
       - test
-

@@ -9,6 +9,7 @@ jobs:
       - image: goodguyankit/circom-node:1.0
     steps:
       - checkout
+          path: my-project
       - node/install-packages:
           pkg-manager: "yarn"
       - run:

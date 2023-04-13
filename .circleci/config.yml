@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     docker:
-      - image: goodguyankit/circom-node
+      - image: goodguyankit/circom-node:1.0
     steps:
       - checkout
       - node/install-packages:

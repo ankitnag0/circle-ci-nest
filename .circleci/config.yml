@@ -17,9 +17,7 @@ jobs:
             cd circom
             cargo build --release
             cargo install --path circom
-      - run:
-          name: Add circom to PATH
-          command: echo $HOME/.cargo/bin >> $BASH_ENV
+            echo "$HOME/.cargo/bin" >> $PATH
       - run:
           name: Check Circom
           command: circom --help

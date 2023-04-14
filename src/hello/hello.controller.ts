@@ -4,7 +4,7 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 export class HelloController {
   @Get()
   getHello(): string {
-    return 'Hello World!!!';
+    return 'Hello World!';
   }
 
   @Post()

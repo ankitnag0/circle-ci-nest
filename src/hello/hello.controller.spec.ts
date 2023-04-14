@@ -12,8 +12,8 @@ describe('HelloController', () => {
     controller = module.get<HelloController>(HelloController);
   });
 
-  it('should return "Hello World!!!"', () => {
-    expect(controller.getHello()).toBe('Hello World!!!');
+  it('should return "Hello World!"', () => {
+    expect(controller.getHello()).toBe('Hello World!');
   });
 
   it('should add two numbers', () => {
